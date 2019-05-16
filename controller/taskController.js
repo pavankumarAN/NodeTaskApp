@@ -1,4 +1,5 @@
 let tasks = require('../model/tasks');
+const Task = require('../model/Task');
 
 exports.getTasks =  (req, res) => {
     res.render('tasks/list', {
@@ -13,6 +14,22 @@ exports.addTask = (req,res) => {
         projectTitle : 'Task Manager',
         title : 'Add task'
     });
+}
+
+exports.addTaskToDB = (req,res) => {
+    console.log("add task works");
+    console.log(req.body);
+
+    const data = req.body;
+    const newTask = new Task(
+        tasks.length + 1,
+        data.title,
+        data.description,
+        data.resourceUrl
+    )
+tasks.push(newTask);
+res.redirect('/');
+    
 }
 
 exports.taskDetails =  (req,res) => {

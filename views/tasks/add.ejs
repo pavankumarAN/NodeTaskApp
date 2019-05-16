@@ -2,18 +2,20 @@
 
 <div class="row">
 <div class="col col-md-4">
-   <form action="" method="post">
+   <form action="/tasks/add" method="post" novalidate>
        <div class="form-group">
        <label for="title">Title</label>
-       <input type="text" name="title" id="title" value="" class="form-control">
+       <input type="text" name="title" id="title" value="" class="form-control" required>
+       <span class="invalid-feedback">Task field cannot be blank</span>
        </div>
        <div class="form-group">
        <label for="description">Description</label>
-       <textarea rows="" cols="" name="description" id="description" value="" class="form-control"></textarea> 
+       <textarea rows="" cols="" name="description" id="description" value="" class="form-control" required></textarea> 
+       <span class="invalid-feedback">Description cannot be blank</span>
        </div>
        <div class="form-group">
        <label for="resourceUrl">Resource URL</label>
-       <input type="text" name="resourceUrl" id="resourceUrl" value="" class="form-control">
+       <input type="text" name="resourceUrl" id="resourceUrl" value="" class="form-control" required>
        </div>
        <button type="submit" class="btn btn-primary">Add</button>
    </form>
