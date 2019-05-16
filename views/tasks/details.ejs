@@ -1,0 +1,29 @@
+<% include ../shared/header %>
+
+<div class="row">
+<div class="col">
+<% if(task) {%>
+
+<div class="card">
+  <div class="card-header">
+     <%=task.title%>
+  </div>
+  
+  <div class="card-body">
+  <img src="<%=task.resourceUrl%>" height="200px"/>
+    <p><%=task.description%></p>
+  </div>
+</div>
+<%} else {%>
+<div class="alert alert-info"> No task found</div>
+<%}%>
+    </div>
+    </div>
+
+<div class="row">
+    <div class="col">
+        <a href="/" class="btn btn-link"> Back </a>
+    </div>
+</div>
+
+    <%include ../shared/footer%>

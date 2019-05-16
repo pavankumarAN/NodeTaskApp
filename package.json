@@ -1,0 +1,25 @@
+{
+  "name": "nodeheroku",
+  "version": "1.0.0",
+  "description": "Testing how to deploy in the heroku",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev-start" : "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavankumarAN/NodeHeroku.git"
+  },
+  "author": "Pavankumar AN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pavankumarAN/NodeHeroku/issues"
+  },
+  "homepage": "https://github.com/pavankumarAN/NodeHeroku#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}
