@@ -17,18 +17,32 @@ exports.addTask = (req,res) => {
 }
 
 exports.addTaskToDB = (req,res) => {
-    console.log("add task works");
-    console.log(req.body);
 
     const data = req.body;
-    const newTask = new Task(
-        tasks.length + 1,
-        data.title,
-        data.description,
-        data.resourceUrl
-    )
-tasks.push(newTask);
-res.redirect('/');
+    let valid = true;
+    if(data.title === '') {
+        valid = false;
+    }
+    if(data.description === '') {
+        valid = false;
+    }
+    // if(data.resourceUrl === '') {
+    //     valid = false;
+    // }
+
+    if(valid) {
+        const newTask = new Task(
+            tasks.length + 1,
+            data.title,
+            data.description,
+            data.resourceUrl
+        )
+    tasks.push(newTask);
+    res.redirect('/'); 
+    }
+    else  {
+        res.redirect('/tasks/add');
+    }
     
 }
 
